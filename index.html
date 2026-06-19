@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Lyxan CarDriving</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game"></div>
+
+  <div id="hud" class="hud">
+    <div class="panel stats">
+      <div class="statrow"><span class="statlabel">score</span><span class="statvalue" id="score">0</span></div>
+      <div class="statrow"><span class="statlabel">speed</span><span class="statvalue" id="speed">0 km/h</span></div>
+      <div class="statrow"><span class="statlabel">coins</span><span class="statvalue" id="coins">0</span></div>
+    </div>
+    <div class="panel bars">
+      <div class="barlabel"><span>damage</span><span id="damagetxt">0%</span></div>
+      <div class="bar"><div id="damagefill" class="fill"></div></div>
+      <div class="barlabel"><span>boost</span><span id="boosttxt">100%</span></div>
+      <div class="bar"><div id="boostfill" class="fill"></div></div>
+    </div>
+  </div>
+
+  <canvas id="minimap" width="200" height="200"></canvas>
+
+  <div id="hamburger" class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div id="menuoverlay" class="menuoverlay">
+    <div class="menucard">
+      <h2 id="menutitle">menu</h2>
+      <div class="sub" id="menusub"></div>
+      <div id="menubody"></div>
+    </div>
+  </div>
+
+  <div id="start" class="overlay">
+    <div class="card">
+      <div class="logo">🏎️</div>
+      <h1>open road 3d</h1>
+      <p class="subtitle">drive a supercar through a vast open world. collect coins, pass gates, push your skills.</p>
+      <div class="controlshint">
+        <div class="hintitem"><span class="key">w / ↑</span> accelerate</div>
+        <div class="hintitem"><span class="key">s / ↓</span> brake</div>
+        <div class="hintitem"><span class="key">a / ←</span> steer left</div>
+        <div class="hintitem"><span class="key">d / →</span> steer right</div>
+        <div class="hintitem"><span class="key">shift</span> boost</div>
+        <div class="hintitem"><span class="key">space</span> boost</div>
+      </div>
+      <button class="btnprimary" id="startbtn">start driving</button>
+    </div>
+  </div>
+
+  <div id="gameover" class="overlay">
+    <div class="card">
+      <div class="logo">🏁</div>
+      <h1 id="gotitle">run complete</h1>
+      <p class="subtitle" id="gotext">great drive.</p>
+      <div class="finalscore" id="finalscore">0</div>
+      <button class="btnprimary" id="restartbtn">drive again</button>
+    </div>
+  </div>
+
+  <div id="touchcontrols" class="touchcontrols">
+    <div id="joystick" class="joystick">
+      <div id="stick" class="stick"></div>
+    </div>
+    <div class="mobilebuttons">
+      <div id="gasbtn" class="touchbtn gas">gas</div>
+      <div id="brakebtn" class="touchbtn brake">brake</div>
+      <div id="boostbtn" class="touchbtn boost">boost</div>
+    </div>
+  </div>
+
+  <div id="flash" class="flash"></div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+  </html>
